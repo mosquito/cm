@@ -64,7 +64,11 @@ def parse_command_line():
 
 sys.modules[__name__].options = OptionsModule('options')
 sys.modules[__name__].arguments = ArgumentsModule('arguments')
-sys.meta_path = [Importer()]
+
+if sys.meta_path:
+    sys.meta_path.insert(0, Importer())
+else:
+    sys.meta_path = [Importer()]
 
 
 __all__ = ('options', 'arguments', 'parse_command_line')

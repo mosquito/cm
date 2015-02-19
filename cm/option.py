@@ -2,6 +2,7 @@
 # encoding: utf-8
 
 class Option(object):
+    _nil = object()
     def __init__(self, name, group, value=None):
         self.name = name
         self.value = value
@@ -9,6 +10,12 @@ class Option(object):
         self.__default = None
         self.__help = None
         self.__help = None
+
+    def __call__(self, new_val=_nil):
+        if new_val is not self._nil:
+            print ("write to config")
+
+        return self.type(self.value)
 
     @property
     def type(self):
