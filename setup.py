@@ -6,7 +6,7 @@ import os
 from setuptools import setup, find_packages
 
 
-__version__ = '0.1alpha'
+__version__ = '0.1alpha2'
 __author__ = 'Dmitry Orlov <me@mosquito.su>'
 
 
